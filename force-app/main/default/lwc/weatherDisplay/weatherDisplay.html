@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="Weather Information" icon-name="utility:dayview">
+    <div class="slds-grid slds-gutters slds-wrap">
+      <template for:each={weatherInfoList} for:item="weather">
+        <div
+          key={weather.Id}
+          class="slds-col slds-size_1-of-3 slds-p-around_small"
+        >
+          <lightning-card title={weather.City__c}>
+            <div class="slds-p-horizontal_small">
+              <p><strong>State:</strong> {weather.State__c}</p>
+              <p>
+                <strong>Temperature:</strong>
+                {weather.Temperature_F__c}°F / {weather.Temperature_C__c}°C
+              </p>
+            </div>
+          </lightning-card>
+        </div>
+      </template>
+    </div>
+    <template if:true={error}>
+      <div class="slds-m-around_medium">
+        <p>Error: {error}</p>
+      </div>
+    </template>
+  </lightning-card>
+</template>
