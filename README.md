@@ -1,6 +1,6 @@
 # Should I go with the Flow?
 
-This demo demonstrates how to use Apex and Flows to solve a problem: categorizing Case records using Prompt Builder. It was presented as part of a talk at Forcelandia 2024. You can find the slides here. 
+This demo demonstrates how to use Apex and Flows to solve a problem: categorizing Case records using Prompt Builder. It was presented as part of a talk at Forcelandia 2024. You can find the slides [here](https://docs.google.com/presentation/d/1JVLyZYpJU0PawMCEuAxXKkyuf-G-xItfTSyDX3gZg0E/edit?usp=sharing). 
 
 ## Demo
 This demo uses the five-day [Trial Org with Einstein Generative AI](https://mcp76yxhtx84crlrk45yhv6lcsby.pub.sfmc-content.com/aha3qbdjy5j) to access the Prompt Builder feature. I recommend using the trial org when using this demo. 
