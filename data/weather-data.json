@@ -1,0 +1,34 @@
+{
+  "records": [
+      {
+          "attributes": {
+              "type": "Weather__c",
+              "referenceId": "Weather__cRef1"
+          },
+          "City__c": "San Francisco",
+          "State__c": "California",
+          "Temperature_C__c": 15,
+          "Temperature_F__c": 59
+      },
+      {
+          "attributes": {
+              "type": "Weather__c",
+              "referenceId": "Weather__cRef2"
+          },
+          "City__c": "Seattle",
+          "State__c": "Washington",
+          "Temperature_C__c": 12,
+          "Temperature_F__c": 54
+      },
+      {
+          "attributes": {
+              "type": "Weather__c",
+              "referenceId": "Weather__cRef3"
+          },
+          "City__c": "Portland",
+          "State__c": "Oregon",
+          "Temperature_C__c": 14,
+          "Temperature_F__c": 57
+      }
+  ]
+}

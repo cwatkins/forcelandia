@@ -1,18 +1,16 @@
-# Salesforce DX Project: Next Steps
+# Should I go with the Flow?
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This demo demonstrates how to use Apex and Flows to solve a problem: categorizing Case records using Prompt Builder. It was presented as part of a talk at Forcelandia 2024. You can find the slides here. 
 
-## How Do You Plan to Deploy Your Changes?
+## Demo
+This demo uses the five-day [Trial Org with Einstein Generative AI](https://mcp76yxhtx84crlrk45yhv6lcsby.pub.sfmc-content.com/aha3qbdjy5j) to access the Prompt Builder feature. I recommend using the trial org when using this demo. 
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+It uses Flow, Apex, and Prompt Builder to automatically create AI-generated summaries and labels the case type and reason for Case records that are missing any of those values. 
 
-## Configure Your Salesforce DX Project
+You can [read more about a related demo](https://developer.salesforce.com/blogs/2024/06/using-prompt-builder-flows-and-apex-to-summarize-and-classify-cases-faster) on the Salesforce Developer blog.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## How to set up the demo
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+1. Register for a free five-day [Trial Org with Einstein Generative AI](https://mcp76yxhtx84crlrk45yhv6lcsby.pub.sfmc-content.com/aha3qbdjy5j). 
+2. Deploy the project using the Salesforce CLI. 
+3. Update a Case record to include a subject and/or description but no Quick Summary, Type, or Reason.

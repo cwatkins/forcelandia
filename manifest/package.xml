@@ -6,6 +6,10 @@
   </types>
   <types>
     <members>Weather__c</members>
+    <name>CustomTab</name>
+  </types>
+  <types>
+    <members>Weather__c</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -21,6 +25,7 @@
   </types>
   <types>
     <members>Summarize_Case_LLM</members>
+    <members>Summarize_Case_Screen</members>
     <members>Update_Weather</members>
     <name>Flow</name>
   </types>

@@ -84,7 +84,7 @@
         <name>API_KEY</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>REPLACE_ME</stringValue>
+            <stringValue>''</stringValue>
         </value>
     </constants>
     <environments>Default</environments>

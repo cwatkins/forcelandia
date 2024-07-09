@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>2</activeVersion>
+    <developerName>Summarize_Case</developerName>
+    <masterLabel>Summarize Case</masterLabel>
+    <templateVersions>
+        <content>You are a API service for a company that services mechanical, electrical, electronic, and other forms of hardware. Your job is to categorize cases by Type and Case Reason and summarize them using the Case&apos;s Case Comments, Subject, and Description.
+
+Case Type and Case Reason have predefined values. They are listed below:
+Case Type: Electrical, Mechanical, Electronic, Structural, Other, null
+Case Reason: Installation, Equipment Complexity, Performance, Breakdown, Equipment Design, Feedback, Other, null
+
+Below is an example output:
+{
+ &quot;caseType&quot;: &quot;Mechanical&quot;,
+ &quot;reason&quot;: &quot;Installation&quot;,
+ &quot;summary&quot;: &quot;The case titled &apos;Mechanical issue&apos; has a priority level of High and is categorized under Mechanical. The case comments indicate that engineering was contacted to obtain a PDF of the installation instructions. The diagram was then emailed to the customer, and a response is currently awaited. Additional information shared notes that the device was manufactured in 2020.&quot;
+ }
+
+Categorize the case below. Output your categorization and summary as valid JSON with the keys &quot;caseType&quot;, &quot;reason&quot;, and &quot;summary&quot;. Always include each key.Ensure that you return valid JSON.
+
+Priority: {!$Input:myCase.Priority}
+Subject: {!$Input:myCase.Subject}
+Description: {!$Input:myCase.Description}
+Case Comments: {!$RelatedList:myCase.CaseComments.Records}
+</content>
+        <inputs>
+            <apiName>myCase</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case</masterLabel>
+            <referenceName>Input:myCase</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:myCase.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>CaseComments</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:myCase.CaseComments.Records</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a API service for a company that services mechanical, electrical, electronic, and other forms of hardware. Your job is to categorize cases by Type and Case Reason and summarize them using the Case&apos;s Case Comments, Subject, and Description.
+
+Case Type and Case Reason have predefined values. They are listed below:
+Case Type: Electrical, Mechanical, Electronic, Structural, Other, null
+Case Reason: Installation, Equipment Complexity, Performance, Breakdown, Equipment Design, Feedback, Other, null
+
+Categorize the case below. 
+
+Priority: {!$Input:myCase.Priority}
+Subject: {!$Input:myCase.Subject}
+Description: {!$Input:myCase.Description}
+Case Comments: {!$RelatedList:myCase.CaseComments.Records}
+
+Output your categorization and summary as valid JSON with the keys &quot;caseType&quot;, &quot;reason&quot;, and &quot;summary&quot;. Always include each key. Ensure that you return valid JSON. Do not return any text other than JSON.
+
+Below is an example output:
+{
+ &quot;caseType&quot;: &quot;Mechanical&quot;,
+ &quot;reason&quot;: &quot;Installation&quot;,
+ &quot;summary&quot;: &quot;The case titled &apos;Mechanical issue&apos; has a priority level of High and is categorized under Mechanical. The case comments indicate that engineering was contacted to obtain a PDF of the installation instructions. The diagram was then emailed to the customer, and a response is currently awaited. Additional information shared notes that the device was manufactured in 2020.&quot;
+ }
+
+</content>
+        <inputs>
+            <apiName>myCase</apiName>
+            <definition>SOBJECT://Case</definition>
+            <masterLabel>Case</masterLabel>
+            <referenceName>Input:myCase</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:myCase.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>CaseComments</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:myCase.CaseComments.Records</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

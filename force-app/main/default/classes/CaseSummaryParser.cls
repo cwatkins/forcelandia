@@ -1,16 +1,16 @@
 public class CaseSummaryParser {
-  @InvocableMethod(
-      label = 'Parse Case Summary'
-      description = 'Parses case summaries from Summarize and Classify prompt template JSON'
+@InvocableMethod(
+    label='Parse Case Summary'
+    description='Parses case summaries from Summarize and Classify prompt template JSON'
   )
-  public static List < CaseSummary > parseTemplate(
-      List < String > categoryJsonString
+  public static List<CaseSummary> parseTemplate(
+    List<String> categoryJsonString
   ) {
-      List < CaseSummary > caseSummaries = new List < CaseSummary > ();
-      for (String str: categoryJsonString) {
-          CaseSummary c = (CaseSummary) JSON.deserialize(str, CaseSummary.class);
-          caseSummaries.add(c);
-      }
-      return caseSummaries;
+    List<CaseSummary> caseSummaries = new List<CaseSummary>();
+    for (String str : categoryJsonString) {
+      CaseSummary c = (CaseSummary) JSON.deserialize(str, CaseSummary.class);
+      caseSummaries.add(c);
+    }
+    return caseSummaries;
   }
 }
